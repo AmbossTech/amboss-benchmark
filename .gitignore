@@ -1,0 +1,6 @@
+/venv
+/.idea
+/output
+
+.env
+*.csv

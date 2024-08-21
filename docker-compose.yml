@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  reflex-benchmark:
+    image: reflex-benchmark:latest
+    build: .
+    volumes:
+      - ./output:/app/output  # save output to a local directory
+
