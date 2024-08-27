@@ -64,6 +64,7 @@ def try_route(lnd: Lnd, route: ln.Route):
 
 
 def main():
+    print("beginning benchmark...", flush=True)
     lnd = Lnd()
     Path('./output').mkdir(exist_ok=True)
     results_filename = f"./output/benchmark_results_{int(time.time())}.csv"
@@ -92,7 +93,7 @@ def main():
         "src, dest, capacity, path_type, path_cost, path_length, ex_time, probe_time, found_path")
 
     # test the routes as they are generated
-    for path_request in path_requests:
+    for i, path_request in enumerate(path_requests):
         destination = path_request.destination
         _type = "lnd"
         path, ex_time = qpl(origin, path_request.destination, capacity)
@@ -132,6 +133,8 @@ def main():
             path_length = -1
         logging.info(
             f"{origin}, {destination}, {capacity}, {_type}, {path_cost}, {path_length}, {ex_time}, {probe_time}, {found_path}")
+        if (i + 1) % 10 == 0:
+            print(f"processed {i + 1} nodes...", flush=True)
 
 
 if __name__ == '__main__':

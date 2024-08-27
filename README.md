@@ -72,7 +72,8 @@ To [bake a custom macaroon](https://docs.lightning.engineering/lightning-network
 - In your Reflex Dashboard under Settings, there is an [API keys section](https://amboss.space/reflex/settings/api-keys). 
 - Click the "Generate API Key" button.
 - Fill out the form. In the node section, be sure to select the same pubkey as will be running the benchmark.
-- Copy the API key to `.env`. Note this key will only be displayed once. 
+- In the next popup, click the button to copy the API key. NOTE: this key will only be displayed once.
+- Paste the API key into `.env`.
 
 ### 4. Build the Docker Image
 
@@ -83,22 +84,21 @@ docker-compose build
 ```
 
 This command will read the `Dockerfile` and build an image tagged as `reflex-benchmark:latest`.
+Note: you must rebuild the docker image after editing any file including `.env`. 
 
 ### 5. Run the Application
 
 To start the application, use the following command:
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 This command will start the container, running the application as defined in the `docker-compose.yml` file.
 
 ### 6. Stopping the Application
 
-To stop the application manually, press `Ctrl+C` in the terminal where the application is running. If you started the
-container
-in detached mode (using `-d`), you can stop it with:
+In detached mode (using `-d`), you can stop the docker container with:
 
 ```bash
 docker-compose down

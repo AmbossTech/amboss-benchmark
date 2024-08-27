@@ -6,4 +6,3 @@ services:
     build: .
     volumes:
       - ./output:/app/output  # save output to a local directory
-
