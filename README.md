@@ -107,6 +107,26 @@ docker-compose down
 
 This command will stop and remove the container, but the Docker image and volumes will persist.
 
+
+### Step 7: Returning the Results
+
+Once you have started the program, please note that it will take a few hours to complete the execution. You can monitor the progress using the following Docker command:
+
+```bash
+docker logs -t amboss-benchmark-reflex-benchmark-1
+```
+
+While the program is running, it will periodically save benchmark results in the `/output` directory like so:
+
+```
+amboss-benchmark/outputs/benchmark_results_<timestamp>.csv
+```
+
+Please share the final results with us once the program has completed. The CSV file can be emailed to us at pathfinding@amboss.tech. 
+This data you provide will help us generate a detailed report and further improve the product based on real-world performance.
+
+---
+
 ### Directory Structure
 
 ```markdown
