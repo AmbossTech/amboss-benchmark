@@ -15,7 +15,7 @@ The script then probes each path with a fixed size payment and records the resul
 Before you can run this project, the following are required:
 
 - **[Amboss Account](https://amboss.space/login)**: Must have an account with Amboss.
-- **[Reflex](https://amboss.space/reflex/)**: Must have access to our Reflex product to generate API key.
+- **[Reflex](https://amboss.space/reflex/)**: Must have access to our Reflex product. Please email pathfinding@amboss.tech and we will enable Reflex on your Amboss Account.
 - **[Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)**: To clone the repository from GitHub.
 - **[Docker](https://docs.docker.com/get-docker/)**: To build and run the application in a containerized environment.
 - **[Docker Compose](https://docs.docker.com/compose/install/)**: To manage Docker applications.
@@ -54,7 +54,7 @@ Open the `.env` file and add the following:
 - `MACAROON_HEX` - hex encoded LND macaroon string used to query/probe routes in LND. 
 - `LND_SOCKET` - clearnet address of LND node. e.g. URL or IP:PORT
 - `LND_PUBKEY` - public key of LND node.
-- `REFLEX_API_KEY` - API key used to query paths from Reflex. 
+- `REFLEX_API_KEY` - API key used to query paths from Reflex. (instructions below)
 
 
 #### A note about macaroons
