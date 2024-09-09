@@ -14,7 +14,8 @@ The script then probes each path with a fixed size payment and records the resul
 
 Before you can run this project, the following are required:
 
-- **[Reflex](https://amboss.space/reflex/)**: Must have access to Reflex to generate API key.
+- **[Amboss Account](https://amboss.space/login)**: Must have an account with Amboss.
+- **[Reflex](https://amboss.space/reflex/)**: Must have access to our Reflex product to generate API key.
 - **[Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)**: To clone the repository from GitHub.
 - **[Docker](https://docs.docker.com/get-docker/)**: To build and run the application in a containerized environment.
 - **[Docker Compose](https://docs.docker.com/compose/install/)**: To manage Docker applications.
@@ -171,4 +172,7 @@ amboss-benchmark/
 
 
 ---
+
+### Disclaimer
+This software is provided on an "as-is" and "as-available" basis, without any warranties of any kind, either express or implied.
 
