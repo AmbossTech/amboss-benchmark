@@ -76,6 +76,12 @@ To [bake a custom macaroon](https://docs.lightning.engineering/lightning-network
 - In the next popup, click the button to copy the API key. NOTE: this key will only be displayed once.
 - Paste the API key into `.env`.
 
+#### Using a TLS Certificate
+
+If your node is not on clearnet, you may need to use a `tls.cert` file for gRPC SSL credentials. 
+The application will automatically use the certificate if it is provided in the project directory. 
+Place the `tls.cert` file in the root directory of this project. Make sure it is named exactly `tls.cert`.
+
 ### 4. Build the Docker Image
 
 Build the Docker image using the `docker-compose.yml` file included in the project:

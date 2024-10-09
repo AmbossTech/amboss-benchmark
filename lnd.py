@@ -82,7 +82,16 @@ class Lnd:
 
         # Use macaroon hex and root certificate
         auth_creds = grpc.metadata_call_credentials(metadata_callback)
-        ssl_creds = grpc.ssl_channel_credentials()
+
+        # Create SSL credentials, optionally loading from a provided certificate
+        tls_cert_path = "/app/tls.cert"
+        if os.path.isfile(tls_cert_path):
+            with open(tls_cert_path, 'rb') as tls_cert_file:
+                tls_cert = tls_cert_file.read()
+            ssl_creds = grpc.ssl_channel_credentials(root_certificates=tls_cert)
+        else:
+            ssl_creds = grpc.ssl_channel_credentials()
+
         combined_creds = grpc.composite_channel_credentials(ssl_creds, auth_creds)
         channel = grpc.secure_channel(lnd_endpoint, combined_creds)
         self.stub = lightning_pb2_grpc.LightningStub(channel)  # type: ignore
